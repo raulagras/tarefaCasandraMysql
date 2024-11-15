@@ -16,11 +16,12 @@ Asegúrate de que el archivo docker-compose.yml está correctamente configurado,
 Ejecuta el comando para iniciar los contenedores en segundo plano. Una vez iniciado, verifica que ambos servicios están activos.
 
 <h5>4. Cargar los Scripts</h5>
-MySQL: Los scripts colocados en la carpeta configurada se ejecutarán automáticamente al iniciar el contenedor. Estos scripts suelen incluir la creación de bases de datos, tablas e inserción de datos iniciales. Cassandra: Los scripts deben ser ejecutados manualmente dentro del contenedor, a menos que se configure un proceso automático para su ejecución.
+<h6>MySQL:</h6> Los scripts colocados en la carpeta configurada se ejecutarán automáticamente al iniciar el contenedor. Estos scripts suelen incluir la creación de bases de datos, tablas e inserción de datos iniciales.<br/> 
+<h6>Cassandra:</h6> Los scripts deben ser ejecutados manualmente dentro del contenedor, a menos que se configure un proceso automático para su ejecución.
 
 <h5>5. Cómo Ejecutar Consultas</h5>
-MySQL: Accede al contenedor de MySQL para ejecutar consultas manualmente o conéctate desde un cliente externo usando las credenciales configuradas.
-Cassandra: Ingresa al contenedor de Cassandra y utiliza la herramienta cqlsh para ejecutar comandos de forma interactiva o cargar scripts adicionales.
+<h6>MySQL:</h6> Accede al contenedor de MySQL para ejecutar consultas manualmente o conéctate desde un cliente externo usando las credenciales configuradas.<br/>
+<h6>Cassandra:</h6> Ingresa al contenedor de Cassandra y utiliza la herramienta cqlsh para ejecutar comandos de forma interactiva o cargar scripts adicionales.
 
 <h5>6. Detención y Limpieza</h5>
 Detén los contenedores cuando termines de trabajar.
