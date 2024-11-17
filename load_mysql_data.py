@@ -3,7 +3,7 @@ import pandas as pd
 
 # Conectar á base de datos MySQL
 conn = mysql.connector.connect(
-    host="localhost",
+    host="127.0.0.1",
     user="root",
     password="contraseñasegura",
     database="escuela"
@@ -21,7 +21,7 @@ CREATE TABLE IF NOT EXISTS estudiantes (
     Nombre VARCHAR(100),
     Grado VARCHAR(50),
     Materia VARCHAR(50),
-    Calificacion DECIMAL(3,2),
+    Calificacion DECIMAL(4,2),
     Asistencia DECIMAL(5,2),
     Fecha_Registro DATE
 )
