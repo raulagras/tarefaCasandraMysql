@@ -3,11 +3,11 @@ Este proyecto detalla los pasos necesarios para levantar contenedores de MySQL y
 
 <h5>0. Requisitos Previos</h5>
 Tener instalado Docker y Docker Compose.<br/>
-Tener configurados los scripts de inicialización para MySQL (.sql) y Cassandra (.cql).
 
 <h4>Pasos para Configuración y Ejecución</h4>
 <h5>1. Clonar el Repositorio</h5>
 Clona este repositorio en tu máquina local y accede al directorio del proyecto.
+Importar el enviroment tarefaCasandra y activarlo
 
 <h5>2. Configurar Docker Compose</h5>
 Asegúrate de que el archivo docker-compose.yml está correctamente configurado, incluyendo los servicios para MySQL y Cassandra, junto con las rutas a los scripts.
@@ -16,17 +16,16 @@ Asegúrate de que el archivo docker-compose.yml está correctamente configurado,
 Ejecuta el comando para iniciar los contenedores en segundo plano. Una vez iniciado, verifica que ambos servicios están activos.
 
 <h5>4. Cargar los Scripts</h5>
-<h6>MySQL:</h6> Los scripts colocados en la carpeta configurada se ejecutarán automáticamente al iniciar el contenedor. Estos scripts suelen incluir la creación de bases de datos, tablas e inserción de datos iniciales.<br/> 
-<h6>Cassandra:</h6> Los scripts deben ser ejecutados manualmente dentro del contenedor, a menos que se configure un proceso automático para su ejecución.
+<h6>MySQL:</h6>Ejecutar load_mysql_data.py<br/> 
+<h6>Cassandra:</h6> Ejecutar load_cassandra.py
 
 <h5>5. Cómo Ejecutar Consultas</h5>
-<h6>MySQL:</h6> Accede al contenedor de MySQL para ejecutar consultas manualmente o conéctate desde un cliente externo usando las credenciales configuradas.<br/>
-<h6>Cassandra:</h6> Ingresa al contenedor de Cassandra y utiliza la herramienta cqlsh para ejecutar comandos de forma interactiva o cargar scripts adicionales.
+<h6>MySQL:</h6> Ejecutar query_mysql.py<br/>
+<h6>Cassandra:</h6> Ejecutar query_cassandra.py
 
 <h5>6. Detención y Limpieza</h5>
 Detén los contenedores cuando termines de trabajar.
 Si necesitas eliminar los volúmenes asociados, asegúrate de usar la opción que limpia los datos persistentes.
 
 <h5>7. Notas Importantes</h5>
-Verifica que los scripts de inicialización no contengan errores.
-Personaliza las configuraciones de los contenedores según tus necesidades específicas.
+El repositorio incluye un csv llamado extracto_datos que contiene un fragmento de la información. En caso de querer probar con el millón de datos será necesario ejecutar dataSetGenerator.py y renombrar en los load el "extracto_datos" por el "datos_educacion". Esto está indicado en el propio notebook.
